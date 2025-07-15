@@ -19,3 +19,18 @@ const TextStyle titleStyle = TextStyle(
 );
 
 const TextStyle descStyle = TextStyle(fontSize: 36, color: primaryColor);
+
+const TextStyle cityCardTitleStyle = TextStyle(
+  fontSize: 24,
+  color: primaryColor,
+);
+
+const TextStyle cityCardDesc1Style = TextStyle(
+  fontSize: 18,
+  color: primaryTranslucentColor,
+);
+
+const TextStyle cityCardDesc2Style = TextStyle(
+  fontSize: 12,
+  color: primaryTranslucentColor,
+);

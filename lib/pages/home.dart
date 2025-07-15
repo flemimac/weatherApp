@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../pages/locations.dart';
 import '../designs/designs.dart';
-import '../test.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,26 +10,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // appBar: AppBar(
-        //   title: Column(
-        //     crossAxisAlignment: CrossAxisAlignment.start,
-        //     children: [
-        //       Text('Mumbai', style: appBarTitleStyle),
-        //       Text('Current Location', style: appBarDescStyle),
-        //     ],
-        //   ),
-        //   actions: [
-        //     IconButton(
-        //       onPressed: () {
-        //         Navigator.of(context).push(
-        //           MaterialPageRoute(builder: (context) => LocationsPage()),
-        //         );
-        //       },
-        //       icon: locationsIcon,
-        //     ),
-        //     IconButton(onPressed: () {}, icon: settingsIcon),
-        //   ],
-        // ),
         body: Padding(
           padding: const EdgeInsets.only(
             top: 50,
