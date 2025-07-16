@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather/pages/settings.dart';
 
+import '../pages/settings/settings.dart';
 import '../pages/locations.dart';
 import '../designs/designs.dart';
 

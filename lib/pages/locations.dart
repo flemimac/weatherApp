@@ -22,7 +22,7 @@ class LocationsPage extends StatelessWidget {
                     spacing: 10,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      GestureDetector(
+                      InkWell(
                         onTap: () {
                           Navigator.pop(context);
                         },
@@ -31,7 +31,7 @@ class LocationsPage extends StatelessWidget {
                       Text('Select City', style: titleStyle),
                     ],
                   ),
-                  GestureDetector(onTap: () {}, child: addLocationIcon),
+                  InkWell(onTap: () {}, child: addLocationIcon),
                 ],
               ),
               Expanded(
