@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../designs/designs.dart';
+import '../../../designs/designs.dart';
 
 class ThemeCard extends StatefulWidget {
   bool theme = true;

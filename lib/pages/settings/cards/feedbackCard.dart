@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../designs/designs.dart';
+import '../../../designs/designs.dart';
 
 class FeedbackCard extends StatelessWidget {
   const FeedbackCard({super.key});

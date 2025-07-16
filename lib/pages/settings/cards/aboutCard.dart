@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../designs/designs.dart';
+import '../../../designs/designs.dart';
 
 class AboutCard extends StatelessWidget {
   const AboutCard({super.key});
