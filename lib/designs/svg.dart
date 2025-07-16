@@ -21,3 +21,5 @@ final SvgPicture backIcon = SvgPicture.asset('assets/svg/back.svg');
 final SvgPicture addLocationIcon = SvgPicture.asset(
   'assets/svg/addLocation.svg',
 );
+
+final SvgPicture checkIcon = SvgPicture.asset('assets/svg/check.svg');

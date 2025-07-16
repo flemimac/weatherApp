@@ -25,12 +25,27 @@ const TextStyle cityCardTitleStyle = TextStyle(
   color: primaryColor,
 );
 
-const TextStyle cityCardDesc1Style = TextStyle(
+const TextStyle cityCardDescPrimaryStyle = TextStyle(
   fontSize: 18,
   color: primaryTranslucentColor,
 );
 
-const TextStyle cityCardDesc2Style = TextStyle(
+const TextStyle cityCardDescSecondaryStyle = TextStyle(
+  fontSize: 12,
+  color: primaryTranslucentColor,
+);
+
+const TextStyle settingsTitleStyle = TextStyle(
+  fontSize: 24,
+  color: primaryColor,
+);
+
+const TextStyle settingsDescPrimaryStyle = TextStyle(
+  fontSize: 18,
+  color: primaryTranslucentColor,
+);
+
+const TextStyle settingsDescSecondaryStyle = TextStyle(
   fontSize: 12,
   color: primaryTranslucentColor,
 );

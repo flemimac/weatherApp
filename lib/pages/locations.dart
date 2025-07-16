@@ -66,7 +66,7 @@ class CityCard extends StatefulWidget {
   final String? cityDesc;
   final SvgPicture? cityIcon;
 
-  CityCard({
+  const CityCard({
     super.key,
     required this.cityName,
     required this.cityTemp,
@@ -93,8 +93,11 @@ class _CityCardState extends State<CityCard> {
                 widget.cityName ?? 'Неизвестный город',
                 style: cityCardTitleStyle,
               ),
-              Text('${widget.cityTemp}°C', style: cityCardDesc1Style),
-              Text(widget.cityDesc ?? 'Нет данных', style: cityCardDesc2Style),
+              Text('${widget.cityTemp}°C', style: cityCardDescPrimaryStyle),
+              Text(
+                widget.cityDesc ?? 'Нет данных',
+                style: cityCardDescSecondaryStyle,
+              ),
             ],
           ),
           SizedBox(height: 40, width: 40, child: widget.cityIcon),

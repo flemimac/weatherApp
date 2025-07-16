@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather/pages/settings.dart';
 
 import '../pages/locations.dart';
 import '../designs/designs.dart';
@@ -43,7 +44,16 @@ class HomePage extends StatelessWidget {
                         },
                         icon: locationsIcon,
                       ),
-                      IconButton(onPressed: () {}, icon: settingsIcon),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => SettingsPage(),
+                            ),
+                          );
+                        },
+                        icon: settingsIcon,
+                      ),
                     ],
                   ),
                 ],
