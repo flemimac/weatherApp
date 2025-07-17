@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../designs/designs.dart';
+import '../../designs/designs.dart';
 
 class InfoSlide extends StatelessWidget {
   const InfoSlide({super.key});

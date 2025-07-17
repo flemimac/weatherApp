@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:weather/pages/slides/detailsSlide.dart';
 
 import '../pages/settings/settings.dart';
-import '../pages/info.dart';
+import 'slides/infoSlide.dart';
 import '../pages/locations.dart';
 
 import '../designs/designs.dart';
@@ -63,7 +64,7 @@ class HomePage extends StatelessWidget {
               SizedBox(height: 50),
               Expanded(
                 child: PageView(
-                  children: [InfoSlide(), InfoSlide(), InfoSlide()],
+                  children: [InfoSlide(), DetailsSlide(), InfoSlide()],
                 ),
               ),
             ],

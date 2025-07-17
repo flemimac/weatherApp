@@ -49,3 +49,18 @@ const TextStyle settingsDescSecondaryStyle = TextStyle(
   fontSize: 12,
   color: primaryTranslucentColor,
 );
+
+const TextStyle detailsTitleStyle = TextStyle(
+  fontSize: 24,
+  color: primaryColor,
+);
+
+const TextStyle detailsDescPrimaryStyle = TextStyle(
+  fontSize: 12,
+  color: primaryTranslucentColor,
+);
+
+const TextStyle detailsDescSecondaryStyle = TextStyle(
+  fontSize: 18,
+  color: primaryColor,
+);
