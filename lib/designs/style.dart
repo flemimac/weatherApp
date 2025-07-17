@@ -64,3 +64,23 @@ const TextStyle detailsDescSecondaryStyle = TextStyle(
   fontSize: 18,
   color: primaryColor,
 );
+
+const TextStyle forecastTitleStyle = TextStyle(
+  fontSize: 24,
+  color: primaryColor,
+);
+
+const TextStyle forecastDescPrimaryStyle = TextStyle(
+  fontSize: 18,
+  color: primaryTranslucentColor,
+);
+
+const TextStyle forecastDescSecondaryStyle = TextStyle(
+  fontSize: 12,
+  color: primaryColor,
+);
+
+const TextStyle forecastTempStyle = TextStyle(
+  fontSize: 10,
+  color: primaryTranslucentColor,
+);

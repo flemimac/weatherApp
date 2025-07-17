@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:weather/designs/designs.dart';
+import '../../designs/designs.dart';
 
 class DetailsSlide extends StatelessWidget {
   const DetailsSlide({super.key});
