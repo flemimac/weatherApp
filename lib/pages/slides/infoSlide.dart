@@ -1,12 +1,46 @@
 import 'package:flutter/material.dart';
 
+import '../../models/weather_model.dart';
+import '../../services/weather_service.dart';
+
 import '../../designs/designs.dart';
 
-class InfoSlide extends StatelessWidget {
+class InfoSlide extends StatefulWidget {
   const InfoSlide({super.key});
 
   @override
+  State<InfoSlide> createState() => _InfoSlideState();
+}
+
+class _InfoSlideState extends State<InfoSlide> {
+  final WeatherService _weatherService = WeatherService();
+  WeatherData? _weatherData;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchWeather();
+  }
+
+  Future<void> _fetchWeather() async {
+    try {
+      final weather = await _weatherService.fetchWeather('Mumbai');
+      setState(() {
+        _weatherData = weather;
+      });
+    } catch (e) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Error: $e')));
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    if (_weatherData == null) {
+      return Center(child: CircularProgressIndicator());
+    }
+
     return Column(
       children: [
         Text('in sync', style: appBarDescStyle),
@@ -17,7 +51,7 @@ class InfoSlide extends StatelessWidget {
             Text('Friday, 25 December 2020', style: titleStyle),
             RichText(
               text: TextSpan(
-                text: '22',
+                text: '${_weatherData!.temp.toStringAsFixed(0)}',
                 style: TextStyle(
                   fontSize: 96,
                   color: Colors.black,
@@ -33,13 +67,19 @@ class InfoSlide extends StatelessWidget {
                 Row(
                   children: [
                     downArrowIcon,
-                    Text('16°C', style: titleStyle),
+                    Text(
+                      '${_weatherData!.minTemp.toStringAsFixed(0)}°C',
+                      style: titleStyle,
+                    ),
                   ],
                 ),
                 Row(
                   children: [
                     upArrowIcon,
-                    Text('26°C', style: titleStyle),
+                    Text(
+                      '${_weatherData!.maxTemp.toStringAsFixed(0)}°C',
+                      style: titleStyle,
+                    ),
                   ],
                 ),
               ],
@@ -51,7 +91,7 @@ class InfoSlide extends StatelessWidget {
           spacing: 20,
           children: [
             drizzleIcon,
-            Text('Light Drizzle', style: titleStyle),
+            Text(_weatherData!.description, style: titleStyle),
           ],
         ),
         SizedBox(height: 50),
@@ -63,14 +103,14 @@ class InfoSlide extends StatelessWidget {
               spacing: 10,
               children: [
                 sunriseIcon,
-                Text('09:18 AM', style: titleStyle),
+                Text('${_weatherData!.sunrise} AM', style: titleStyle),
               ],
             ),
             Row(
               spacing: 10,
               children: [
                 sunsetIcon,
-                Text('06:32 PM', style: titleStyle),
+                Text('${_weatherData!.sunset} PM', style: titleStyle),
               ],
             ),
           ],

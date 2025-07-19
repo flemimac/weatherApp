@@ -83,25 +83,28 @@ class _CityCardState extends State<CityCard> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 50),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                widget.cityName ?? 'Неизвестный город',
-                style: cityCardTitleStyle,
-              ),
-              Text('${widget.cityTemp}°C', style: cityCardDescPrimaryStyle),
-              Text(
-                widget.cityDesc ?? 'Нет данных',
-                style: cityCardDescSecondaryStyle,
-              ),
-            ],
-          ),
-          SizedBox(height: 40, width: 40, child: widget.cityIcon),
-        ],
+      child: InkWell(
+        onTap: () {},
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.cityName ?? 'Неизвестный город',
+                  style: cityCardTitleStyle,
+                ),
+                Text('${widget.cityTemp}°C', style: cityCardDescPrimaryStyle),
+                Text(
+                  widget.cityDesc ?? 'Нет данных',
+                  style: cityCardDescSecondaryStyle,
+                ),
+              ],
+            ),
+            SizedBox(height: 40, width: 40, child: widget.cityIcon),
+          ],
+        ),
       ),
     );
   }

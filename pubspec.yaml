@@ -12,6 +12,9 @@ dependencies:
     sdk: flutter
 
   flutter_svg: ^2.2.0
+  http: ^1.4.0
+  flutter_dotenv: ^5.2.1
+  intl: ^0.20.2
   cupertino_icons: ^1.0.8
 
 dev_dependencies:
@@ -25,6 +28,7 @@ flutter:
 
   assets:
     - assets/svg/
+    - .env
 
   fonts:
     - family: UbuntuCondensed
