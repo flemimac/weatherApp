@@ -51,7 +51,7 @@ class _InfoSlideState extends State<InfoSlide> {
             Text('Friday, 25 December 2020', style: titleStyle),
             RichText(
               text: TextSpan(
-                text: '${_weatherData!.temp.toStringAsFixed(0)}',
+                text: _weatherData!.temp.toStringAsFixed(0),
                 style: TextStyle(
                   fontSize: 96,
                   color: Colors.black,

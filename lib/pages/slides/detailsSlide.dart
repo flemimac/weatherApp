@@ -1,12 +1,45 @@
 import 'package:flutter/material.dart';
 
+import '../../services/weather_service.dart';
 import '../../designs/designs.dart';
+import '../../models/weather_model.dart';
 
-class DetailsSlide extends StatelessWidget {
+class DetailsSlide extends StatefulWidget {
   const DetailsSlide({super.key});
 
   @override
+  State<DetailsSlide> createState() => _DetailsSlideState();
+}
+
+class _DetailsSlideState extends State<DetailsSlide> {
+  final WeatherService _weatherService = WeatherService();
+  WeatherData? _weatherData;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchWeather();
+  }
+
+  Future<void> _fetchWeather() async {
+    try {
+      final weather = await _weatherService.fetchWeather('Mumbai');
+      setState(() {
+        _weatherData = weather;
+      });
+    } catch (e) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Error: $e')));
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    if (_weatherData == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 30,
@@ -29,7 +62,10 @@ class DetailsSlide extends StatelessWidget {
               spacing: 5,
               children: [
                 Text('SE Wind', style: detailsDescPrimaryStyle),
-                Text('10.23 km/h', style: detailsDescSecondaryStyle),
+                Text(
+                  '${_weatherData!.windSpeed} km/h',
+                  style: detailsDescSecondaryStyle,
+                ),
               ],
             ),
             Column(

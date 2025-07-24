@@ -8,6 +8,7 @@ class WeatherData {
   final double minTemp;
   final String sunrise;
   final String sunset;
+  final String windSpeed;
 
   WeatherData({
     required this.cityName,
@@ -17,6 +18,7 @@ class WeatherData {
     required this.minTemp,
     required this.sunrise,
     required this.sunset,
+    required this.windSpeed,
   });
 
   factory WeatherData.fromJson(Map<String, dynamic> json) {
@@ -28,6 +30,7 @@ class WeatherData {
       minTemp: json['main']['temp_min'],
       sunrise: _formatTime(json['sys']['sunrise'], json['timezone']),
       sunset: _formatTime(json['sys']['sunset'], json['timezone']),
+      windSpeed: (json['wind']['speed'] * 3.6).toStringAsFixed(1),
     );
   }
 
